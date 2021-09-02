@@ -1,1 +1,0 @@
-# pracownia_witr_i_apl
