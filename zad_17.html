@@ -1,0 +1,42 @@
+<html>
+ <head>
+<!--
+<link rel="stylesheet" href="dark_mode.css">
+<link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+-->
+ <meta charset="UTF-8">
+ <title>zadanie 17 </title>
+ </head>
+<body>
+    <h4>
+    Co to jest funkcja?<br>
+1. Jest to zbiór zgrupowanych instrukcji, które możemy uruchamiać poprzez podanie ich nazwy,<br>
+2. Każda funkcja po wywołaniu wykonuje swój wewnętrzny kod,<br>
+3. Funkcja może mieć argumenty, które wchodzą do wnętrza funkcji i są tam przetwarzane np. suma_kry(a, b),<br>
+4. Może(nie zawsze) zwrócić obliczoną wartość zapisaną po słowie kluczowym return.</h4>
+    <script language="JavaScript">
+    var a=parseFloat(prompt("a=",""));
+    var b=parseFloat(prompt("b=",""));
+    function suma_szcz(a, b) {
+    return a + b;
+    }
+    function odejmowanie_szcz(a, b) {
+    return a - b;
+    }
+    function mnozenie_szcz(a, b) {
+    return a * b;
+    }
+    function od_kwadratu_szcz(a, b) {
+    return Math.pow(a, b);
+    }
+    function reszta_z_dzielenia_a_przez_b_szcz(a, b) {
+    return a % b;
+    }
+    document.write("suma="+suma_szcz(a,b)+"<br>");
+    document.write("odejmowanie="+odejmowanie_szcz(a,b)+"<br>");
+    document.write("mnozenie="+mnozenie_szcz(a,b)+"<br>");
+    document.write("od kwadratu="+od_kwadratu_szcz(a,b)+"<br>");
+    document.write("reszta z dzielenia a przez b="+reszta_z_dzielenia_a_przez_b_szcz(a,b)+"<br>");
+    </script>
+    </body>
+    </html>

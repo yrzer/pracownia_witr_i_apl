@@ -1,0 +1,32 @@
+<html>
+<head>
+    <!--
+    <link rel="stylesheet" href="dark_mode.css">
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    -->
+    <meta charset="UTF-8">
+    <title>zadanie 15 </title>
+</head>
+<body>
+	<textarea rows="30" cols="100">
+<script language="JavaScript">
+	var liczba1=prompt("liczba1=","");
+	var liczba2=prompt("liczba2=","");
+	
+	var x1_szcz = parseFloat(liczba1);
+	var x2_szcz = parseFloat(liczba2);
+	
+	var y1 = parseFloat(3*Math.pow(x1_szcz, (6/(6+2))));
+	var y2 = parseFloat(2*Math.cos(x1_szcz * Math.PI / 180) + 2*Math.sin(x1_szcz * Math.PI / 180));
+	var ya = Math.cbrt(Math.pow(x1_szcz,5) + (2 * Math.pow(x2_szcz,4)));
+	var yq = Math.abs(x1_szcz - x2_szcz)
+	var y3 = ya * yq;	
+	document.write(x1_szcz + "<br>");
+	document.write(x2_szcz + "<br>");
+	document.write(y1 + "<br>");
+	document.write(y2 + "<br>");
+	document.write(y3 + "<br>");
+</script>
+</textarea>
+</body>
+</html>
