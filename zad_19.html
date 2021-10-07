@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <!--
+        <link rel="stylesheet" href="dark_mode.css">
+        <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+        -->
+         <meta charset="UTF-8">
+        <!-- <title>zadanie 17 </title> -->
+
+<title>
+ pole i obw prostokąta
+</title>
+ <script language="JavaScript">
+function Pole_szcz(a_szcz,b_szcz)
+{
+ a=parseFloat(a_szcz)
+ b=parseFloat(b_szcz)
+ pole_wynik=a*b
+ document.getElementsByName('pole')[0].value=pole_wynik.toFixed(2);
+ alert("pole="+pole_wynik.toFixed(2));
+ pokaz1.innerHTML="pole="+pole_wynik.toFixed(2)+"<br>";
+}
+function obw_szcz(a_szcz,b_szcz)
+{
+ a=parseFloat(a_szcz)
+ b=parseFloat(b_szcz)
+ obw_wynik=a*2 + 2*b
+ document.getElementsByName('obw')[0].value=obw_wynik.toFixed(2);
+ alert("obwód="+obw_wynik.toFixed(2));
+ pokaz2.innerHTML="pole="+obw_wynik.toFixed(2);
+}
+ </script>
+</head>
+<body>
+<h3>prostokąt:</h3>
+<br> <br>
+<form name="formularz" action="..." onsubmit="Pole_szcz(this.a_szcz.value,this.b_szcz.value);
+obw_szcz(this.a_szcz.value,this.b_szcz.value);return false">
+Podaj a=
+<input size="6" name="a_szcz">
+Podaj b=
+<input size="6" name="b_szcz">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz">
+<br>
+<br>
+pole=
+<input size="6" name="pole">
+obwód=
+<input size="6" name="obw">
+</form>
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+</body>
+</html>

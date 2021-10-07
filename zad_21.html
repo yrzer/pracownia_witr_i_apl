@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <!--
+        <link rel="stylesheet" href="dark_mode.css">
+        <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+        -->
+         <meta charset="UTF-8">
+        <!-- <title>zadanie 21 </title> -->
+
+<title>
+ drabina i alfa prostokąta
+</title>
+ <script language="JavaScript">
+function drabina_szcz(D,X)
+{
+ d=parseFloat(D)
+ x=parseFloat(X)
+ dl_szcz=Math.sqrt*(d*d+x*x)
+ af_szcz=Math.atan(d/x))*180/Math.pi
+
+ document.getElementsByName('alfa')[0].value=af_szcz.toFixed(2);
+document.getElementsByName('drabina')[0].value=dl_szcz.toFixed(2);
+ alert("alfa="+af_szcz.toFixed(2));
+alert("drabina="+dl_szcz.toFixed(2));
+ pokaz2.innerHTML="alfa="af_szcz.toFixed(2);
+pokaz1.innerHTML="drabina="+dl_szcz.toFixed(2)+"<br>";
+
+}
+ </script>
+</head>
+<body>
+<h3>Drabina stoi oparta o mur:</h3>
+<br> <br>
+<form name="formularz" action="..." onsubmit="drabina_szcz(this.D.value,this.X.value);return false">
+Podaj wysokość oparcia drabiny=
+<input size="6" name="D">
+Podaj odległość oparcia drabiny=
+<input size="6" name="X">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz">
+<br>
+<br>
+drabina=
+<input size="6" name="drabina">
+alfa=
+<input size="6" name="alfa">
+</form>
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+</body>
+</html>
