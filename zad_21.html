@@ -10,32 +10,34 @@
 <title>
  drabina i alfa prostokąta
 </title>
- <script language="JavaScript">
-function drabina_szcz(D,X)
-{
- d=parseFloat(D)
- x=parseFloat(X)
- dl_szcz=Math.sqrt*(d*d+x*x)
- af_szcz=Math.atan(d/x))*180/Math.pi
-
- document.getElementsByName('alfa')[0].value=af_szcz.toFixed(2);
-document.getElementsByName('drabina')[0].value=dl_szcz.toFixed(2);
- alert("alfa="+af_szcz.toFixed(2));
-alert("drabina="+dl_szcz.toFixed(2));
- pokaz2.innerHTML="alfa="af_szcz.toFixed(2);
-pokaz1.innerHTML="drabina="+dl_szcz.toFixed(2)+"<br>";
-
-}
- </script>
+<script language="JavaScript">
+    function drabina_szramowski(d_szr, x_szr){
+     d=parseFloat(d_szr)
+     x=parseFloat(x_szr)
+     drabina=Math.sqrt((d*d) + (x*x))
+     document.getElementsByName('drabina')[0].value=drabina.toFixed(2);
+     alert("drabina="+drabina.toFixed(2)+" cm^2");
+     pokaz1.innerHTML="drabina="+drabina.toFixed(2)+" cm^2"+"<br>";
+    }
+    function alfa_szramowski(d_szr,x_szr){
+     d=parseFloat(d_szr)
+     x=parseFloat(x_szr)
+     alfa=Math.atan(d/x)*(180/Math.PI)
+     document.getElementsByName('alfa')[0].value=alfa.toFixed(2);
+     alert("alfa="+alfa.toFixed(2)+" cm");
+     pokaz2.innerHTML="alfa="+alfa.toFixed(2)+"cm";
+    }
+     </script>
 </head>
 <body>
 <h3>Drabina stoi oparta o mur:</h3>
 <br> <br>
-<form name="formularz" action="..." onsubmit="drabina_szcz(this.D.value,this.X.value);return false">
+<form name="formularz" action="..." onsubmit="drabina_szramowski(this.X.value,this.H.value);
+alfa_szramowski(this.X.value,this.H.value);return false">
 Podaj wysokość oparcia drabiny=
-<input size="6" name="D">
-Podaj odległość oparcia drabiny=
 <input size="6" name="X">
+Podaj odległość oparcia drabiny=
+<input size="6" name="H">
 <br>
 <br>
 <input TYPE="submit" Value="oblicz">
