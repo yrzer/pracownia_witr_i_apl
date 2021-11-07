@@ -1,0 +1,93 @@
+@font-face {
+    font-family: pixel;
+    src: url(https://yrzer.github.io/Mine/pixel_fonts.otf);
+ }
+html{
+    font-family: pixel!important;
+    background-color:black;
+}
+.canvas{
+    position: fixed;
+    top: 0;
+    left:-10;
+    width: 100%;
+    height: 110%;
+    z-index: -1;
+}
+.nazwisko {font-size: 2cm; text-align:center; margin-top:0.5cm;margin-bottom:0.5cm;cursor:default;}
+.svg-icon{ /* lupa svg */
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+} /* lupa svg */
+li a {
+    font-size:0px !important;
+}
+#s_lista{
+    list-style-type: none;
+}
+input[type=button]{
+    font-family: pixel;
+    background-color: transparent;
+    border: none;
+    color: rgb(216, 216, 216);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  input[type=button]:hover {
+    color: black;
+    transition:1s;
+    transition-delay: 1.2s;
+}
+#s_lista input{
+    font-size: 30px;
+  
+}
+#s_lista hr{
+    border: 0;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    box-shadow: 0 0 4px 3px #0077ff; /* 20px/20px 50px 15px grey ;x/y=h/w blur shadow_blur color*/
+}
+#s_lista li{
+    padding: 9px;
+}
+.body {
+    margin-top: 7%;
+}
+.header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2.5cm;
+    background-color: rgba(60, 255, 0, 0.5);
+    z-index: 1000;
+}
+.nazwisko{
+    font-size:450%;
+    margin-top: 2px;
+    margin-left: 0%;
+    box-sizing: inherit;
+}
+div.search{
+    margin-top: -1.5cm;
+    margin-left: 85%;
+    background-color: rgba(77, 77, 77, 0.9);
+    transform: translate(-50%,-50%);
+    border-radius: 25px;
+    width:220px;
+    height:30px;
+    padding:9px;
+}
+#search{
+    padding:3px;
+}
+.search_ico{
+    cursor:progress;
+    position: fixed;
+    margin-top: -11%;
+    margin-left: 78%;
+    border-radius: 50%;
+    background-color: #af6382;
+}
