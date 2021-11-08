@@ -47,7 +47,20 @@ input[type=button]{
     border: 0;
     margin-bottom: 2%;
     margin-top: 2%;
+    margin-left: -3%;
     box-shadow: 0 0 4px 3px #0077ff; /* 20px/20px 50px 15px grey ;x/y=h/w blur shadow_blur color*/
+	animation: animate 3s linear infinite; 
+}
+@keyframes animate
+{
+	0%
+	{
+		filter: hue-rotate(0deg);
+	}
+	100%
+	{
+		filter: hue-rotate(360deg);
+	}
 }
 #s_lista li{
     padding: 9px;

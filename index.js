@@ -3,6 +3,11 @@
                 var input, filter, ul, li, a, i, txtValue;
                 input = document.getElementById("search");
                 filter = input.value.toUpperCase();
+                if(filter == "AMOGUS") // nie polecam // https://1turbox1.github.io/HTML-CSS-JavaScript/ dzienki turbox UwU
+                    {
+                        let audio = new Audio('https://www.myinstants.com/media/sounds/guy-yelling-among-us.mp3');
+                        audio.play();
+                    };
                 ul = document.getElementById("s_lista");
                 li = ul.getElementsByTagName("li");
                 for (i = 0; i < li.length; i++) {
