@@ -10,26 +10,22 @@
     <div>
  <script language="JavaScript">
 	let x = prompt("imię: ", "");
-	var a =  x.length;
+	var a =  ((x.length)%4)+5;
 	let y = prompt("nazwisko: ", "");
-	var b =  y.length;
+	var b =  ((y.length)%6)+20;
  
  for(i=1;i<=a;i++)
  {
 document.write("*");
  }document.write("<br>");
- 
  for(m=1;m<=(b-2);m++){
  document.write("*");
- 
  for(n=1;n<=(a-2);n++){
  document.write("&ensp;");
  };
- 
  document.write("*");
  document.write("<br>");
  }
- 
  for(s=1;s<=a;s++)
  {
 document.write("*");
