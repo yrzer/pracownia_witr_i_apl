@@ -13,21 +13,19 @@
 	l1_t_szcz = parseFloat(x);
 	var y=prompt("liczby z przedziału <20,60>: ", "");
 	l2_t_szcz = parseFloat(y);
-	var z=prompt("wielkość tekstu: ", "");
-	pocz_szcz = parseFloat(z);
-	var w=prompt("dowolny tekst: ", "");
-	text_szcz = parseFloat(w);
+
+	var pocz_szcz=prompt("wielkość tekstu: ", "");
+	var text_szcz=prompt("dowolny tekst: ", "");
 	
 if(l1_t_szcz<l2_t_szcz){
- for(a=1;a<=20+pocz_szcz;a++)
- {
+ for(a=1;a<=20+pocz_szcz;a++){
 document.write("<p style=\"font-size:"+a*5+"px; color: black;\"><br>"+text_szcz+"<br></p>");
  }}
  else if(l2_t_szcz<l1_t_szcz){
-  for(a=20;a<=20-pocz_szcz;a--)
- {
+  for(a=20;a<=20-pocz_szcz;a--){
 document.write("<p style=\"font-size:"+a*5+"px; color: black;\"><br>"+text_szcz+"<br></p>");
- }}
+ }}else {
+	document.write("error");
  }
  </script>
 </div>

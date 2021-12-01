@@ -175,3 +175,33 @@
             function WinOpen_szczepkowski_69() {
                 window.open("zad_69.html", "okienko38", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
             }
+            function WinOpen_szczepkowski_70_kod() {
+                window.open("zad_70_kod.html", "okienko39", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function WinOpen_szczepkowski_70() {
+                window.open("zad_70.html", "okienko40", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function WinOpen_szczepkowski_71_kod() {
+                window.open("zad_71_kod.html", "okienko41", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function WinOpen_szczepkowski_71() {
+                window.open("zad_71.html", "okienko42", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function WinOpen_szczepkowski_72_kod() {
+                window.open("zad_72_kod.html", "okienko43", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function WinOpen_szczepkowski_72() {
+                window.open("zad_72.html", "okienko44", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function WinOpen_szczepkowski_77_kod() {
+                window.open("zad_72_kod.html", "okienko45", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function WinOpen_szczepkowski_77() {
+                window.open("zad_77.html", "okienko46", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function WinOpen_szczepkowski_78_kod() {
+                window.open("zad_78_kod.html", "okienko47", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function WinOpen_szczepkowski_78() {
+                window.open("zad_78.html", "okienko48", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
