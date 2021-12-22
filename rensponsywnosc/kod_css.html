@@ -1,0 +1,92 @@
+<html>
+ <head>
+<!-- <link rel="stylesheet" href="dark_mode.css"> 
+<link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css"> -->
+ <meta charset="UTF-8">
+ <title>zadanie 8 </title>
+ </head>
+<body>
+    <h1>zadanie 2</h1>
+<textarea rows="11" cols="80%">
+    <!DOCTYPE html>
+    <html>
+     <head>
+     <meta charset="utf-8">
+     <title>Darmowy Kurs CSS</title>
+     <style> 
+     div {
+     background-color:gold;}
+     @media screen {
+     div{
+     background-color:red;
+     }}
+    @media handheld, tv {
+     div {
+     background-color:red;
+     }}
+     </style>
+     </head>
+     <body>
+     <div>to jest przykładowy element - div</div>
+     </body>
+    </html>
+</textarea>
+<h1>zadanie 3</h1>
+<textarea rows="11" cols="80%">
+    <!DOCTYPE html>
+    <html>
+     <head>
+     <meta charset="utf-8">
+     <title>Darmowy Kurs CSS</title>
+     <link rel="stylesheet" media="handheld, tv" href="zad_3.css" >
+     <style media="handheld, tv">
+     div {
+     background-color:red;
+     }
+     </style>
+     </head>
+     <body>
+     <div>to jest przykładowy element - div</div>
+     </body>
+    </html>
+/// css
+@media projection, screen, tty, tv  {
+    div {
+    background-color:green;
+    }
+}
+@media aural ,braille, embossed ,handheld ,print  {
+    div{
+    background-color:red;
+    }
+} 
+</textarea>
+<h1>zadanie 4</h1>
+<textarea rows="11" cols="80%">
+    <!DOCTYPE html>
+    <html>
+     <head>
+        <meta charset="utf-8">
+        <title>Darmowy Kurs CSS</title>
+     <link rel="stylesheet" href="zad_4.css" >
+     </head>
+     <body>
+        <div>to jest przykładowy element - div</div>
+     </body>
+    </html>
+/// css
+@media screen and (min-width:390px) and (max-width:820px){
+    div{
+         color:red;
+         font-size:2cm;
+    }
+    }
+    @media aural ,braille ,embossed ,handheld ,print ,projection ,tty{
+    div{
+        color:blue;
+        font-size:1cm;
+    }
+    }
+</textarea>
+</body>
+</html>

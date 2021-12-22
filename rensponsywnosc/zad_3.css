@@ -1,0 +1,10 @@
+@media projection, screen, tty, tv  {
+    div {
+    background-color:green;
+    }
+}
+@media aural ,braille, embossed ,handheld ,print  {
+    div{
+    background-color:red;
+    }
+} 

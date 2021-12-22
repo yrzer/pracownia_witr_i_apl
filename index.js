@@ -205,3 +205,21 @@
             function WinOpen_szczepkowski_78() {
                 window.open("zad_78.html", "okienko48", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
             }
+
+
+            function szczepkowski_rensponsywnosc() {
+                window.open("rensponsywnosc/index.html", '_blank');
+            }
+
+            function szczepkowski_rensponsywnosc_2() {
+                window.open("zad_2.html", "okienko49", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function szczepkowski_rensponsywnosc_3() {
+                window.open("zad_2.html", "okienko50", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function szczepkowski_rensponsywnosc_4() {
+                window.open("zad_2.html", "okienko51", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
+            function szczepkowski_rensponsywnosc_kod_css() {
+                window.open("kod_css.html", "okienko52", "toolbar=no,directories=no,menubar=no,fullscreen=yes");
+            }
