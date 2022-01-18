@@ -1,0 +1,50 @@
+<html><head>
+    <!--
+    <link rel="stylesheet" href="dark_mode.css">
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    -->
+     <meta charset="UTF-8">
+     <title>zadanie 1 </title>
+
+     </head>
+    <body>
+
+
+        liczba1&nbsp;<input type="number" id="liczba1"><br><br>
+        liczba2&nbsp;<input type="number" id="liczba2"><br><br>
+
+        <input type="submit" value="dodawanie" onclick="dodawanie();return false">
+        <input type="submit" value="odejmowanie" onclick="odejmowanie();return false">
+        <input type="submit" value="mnożenie" onclick="mnożenie();return false">
+        <input type="submit" value="dzielenie" onclick="dzielenie();return false">
+
+        <p id="wynik"></p>
+
+        <script language="JavaScript">
+            function dodawanie(){   
+                var a = parseFloat(this.liczba1.value);
+            var b = parseFloat(this.liczba2.value);
+                const w=a+b;
+                document.getElementById("wynik").innerHTML = w;
+            };
+            function odejmowanie(){
+                var a = parseFloat(this.liczba1.value);
+            var b = parseFloat(this.liczba2.value);
+                const w=a-b;
+                document.getElementById("wynik").innerHTML = w;
+            };
+            function mnożenie(){
+                var a = parseFloat(this.liczba1.value);
+            var b = parseFloat(this.liczba2.value);
+                const w=a*b;
+                document.getElementById("wynik").innerHTML = w;
+            };
+            function dzielenie(){
+                var a = parseFloat(this.liczba1.value);
+            var b = parseFloat(this.liczba2.value);
+                const w=a/b;
+                document.getElementById("wynik").innerHTML = w;
+            }
+    
+        </script>
+    </body></html>
