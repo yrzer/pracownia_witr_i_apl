@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+		<title>rgb</title>
+		<style>
+		#wynik{
+		width:200px;
+		height:200px;
+		}
+		</style>
+	</head><body>
+<input type="range" id="r" min=1 max=255>
+<span id="red">128</span><br>
+<input type="range" id="g" min=1 max=255>
+<span id="green">128</span><br>
+<input type="range" id="b" min=1 max=255>
+<span id="blue">128</span><br>
+
+	<p id="wynik" style="background-color: rgb(128,128,128);"></p>
+
+    <script type="text/javascript">
+        const zmien = () => {
+            red.innerHTML = r.value;
+            green.innerHTML = g.value;
+            blue.innerHTML = b.value;
+           
+document.getElementById("wynik").style.backgroundColor = "rgb("+r.value+","+g.value+","+b.value+")";
+        }
+        r.addEventListener("change",zmien); 
+        g.addEventListener("change",zmien);
+        b.addEventListener("change",zmien);
+        </script>
+	</body>
+</html>
