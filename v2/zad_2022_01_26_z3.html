@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+		<title>przelicznik</title>
+	</head><body>
+        <h4>kalkulator walut</h4>
+<input type="number" id="liczba" value="2022">
+<select id="lista">
+    <option value="kmnm">Kilometry na mile</option>
+<option value="mnc">Metry na centymetry</option>
+<option value="cnm">Centymetry na metry</option>
+<option value="mmnc">Milimetry na centymetry</option>
+<option value="kng">kilogramy na Gramy</option>
+<option value="tnk">Tony na kilogramy</option>
+<option value="mnl">Milility na litry</option>
+<option value="lnm">Litry na mililitry</option>
+<option value="cnk">Centymetry na kilometry</option>
+<option value="lng">Waty na Kilowaty</option>
+</select>
+<input type="submit" value="przelicz" onclick="zmien()">
+
+	<p id="wynik"></p>
+
+    <script type="text/javascript">
+    const zmien = () => {
+    const wartosc=parseFloat(liczba.value);
+    const wybor=lista.value;
+
+    if(wybor=="kMnM"){
+        wYnIk.innerHTML = wartosc * 0.62 + " Mi";
+}else if(wybor=="mnc"){
+        wynik.innerHTML = wartosc / 0.01 + " cm";
+}else if(wybor=="cNm"){
+        WyNiK.innerHTML = wartosc / 100 +" m";
+}else if(wybor=="mmnc"){
+        wynik.innerHTML = wartosc / 10 + " cm";
+}else if(wybor=="kNg"){
+        WyNiK.innerHTML = wartosc / 0.001 +" g";
+}else if(wybor=="tnk"){
+        wynik.innerHTML = wartosc / 0.001 +" kg";
+}else if(wybor=="mNl"){
+        WyNiK.innerHTML = wartosc / 1000.0 +" l";
+}else if(wybor=="lnm"){
+        wynik.innerHTML = wartosc / 0.001 +"ml";
+}else if(wybor=="cNk"){
+        WyNiK.innerHTML = wartosc / 100000 +" kM";
+}else if(wybor=="lng"){
+        wynik.innerHTML = wartosc / 1000.0 +" kW";
+}else{
+    wynik.innerHTML = "error";
+}
+        }
+        </script>
+	</body>
+</html>
