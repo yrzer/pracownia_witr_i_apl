@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>funkcja</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body style="font-size:250%"><center>
+    <h1>OBLICZANIE DATY WIELKANOCYPODAJ</h1>
+    <div>
+    <input type="number" id="rok"><input type="button" value="ROK OBLICZ" onclick="zmien()"><br>
+    WIELKANOC WYPADA: <span id="day"></span></div>
+    
+	</center></body>
+    <script language="JavaScript">
+         const zmien = () => {
+        y = parseInt(this.rok.value); // rok
+        a = y % 19;
+        b = parseInt(y/100);
+        c = y % 100;
+        d = parseInt(b/4);
+        e = b % 4;
+        f = parseInt((b+8)/25);
+        g = parseInt((b-f+1)/3);
+        h = (19*a+b-d-g+15) % 30;
+        i = parseInt(c/4);
+        k = c % 4;
+        l = (32+2*e+2*i-h-k) % 7;
+        m = parseInt((a+11*h+22*l)/451);
+        p = (h+l-7*m+114) % 31;
+
+        p = (p+1); // dzień
+        n = parseInt((h+l-7*m+114)/31); // miesiąc 3 - marzec, 4 - kwiecień
+
+        if (n==3) {
+           ms = "marzec"; 
+        }else if(n==4){
+           ms = "kwiecień";
+        }else{
+            ms= "error";};
+
+            day.innerHTML = p+" "+ms;
+        }
+    </script>
+</html>

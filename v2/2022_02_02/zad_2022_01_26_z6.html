@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>kostka</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body style="font-size:400%"><center>
+<span>
+    <input type="button" value="Rzut kostką" onclick="los()"><br>wynik wygranej: <p id="wynik"></p>
+</span>
+<div>
+    
+    <p id="r1" style="float: left;margin-left: 35%;">los 1 </p>
+    <p id="r2" style="float: right;margin-right: 35%;">los 2 </p>
+    
+</div>
+</center></body><script language="JavaScript">
+const los =()=> {
+    const p=Math.floor(Math.random()*6)+1;
+    const q=Math.floor(Math.random()*6)+1;
+    r1.innerHTML = "<img src=g"+p+".png width=200 height=200>";
+    r2.innerHTML = "<img src=g"+q+".png width=200 height=200>";
+    if(p%2==0){
+        if(q==2 || q==4 || q==5){
+        wygrana = p+3*q;}
+        else {
+        wygrana = 2*q;
+    }}
+    else{
+        if(q==1 || q==3 || q==6){
+            if(p==q){
+            wygrana = 5*p+3;
+            }else{
+            wygrana = 2*q+p;
+            }}
+        else{
+        wygrana = Math.min(p,q)+4;
+    }}
+wynik.innerHTML = wygrana;
+}
+</script></html>
