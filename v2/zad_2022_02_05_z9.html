@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>układy równań liniowych</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body>
+    <h4>oblicznie dnia tygodnia</h4>
+<div>
+    dzień&ensp;<input type="number" min="1" max="31" id="d"><br>
+    miesiąc&ensp;<input type="number" min="1" max="12" id="m"><br>
+    rok&ensp;<input type="number" min="1" max="3000" id="r"><br>
+    <input type = "button" value = "oblicz" onclick="zmien()"><br>
+    dzień tygodnia to: <span id = "wynik">----</span>
+</div></body>
+    <script type="text/javascript">
+    
+        const zmien = () => {
+                var d = parseInt(this.d.value);
+                var m = parseInt(this.m.value);
+                var r = parseInt(this.r.value);
+                var prz;
+                var liczbaDni = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+                var nd = ["poniedzialek", "wtorek", "sroda", "czwartek", "piatek", "sobota", "niedziela"];
+ 
+                var dzienRoku = d + liczbaDni[m-1];
+
+                if((r % 4 == 0  &&  r % 100 != 0) || r % 400 == 0){
+                    prz=1;
+                }else{
+                    prz=0;
+                }
+                if ((m > 2) && (prz == 1)){dzienRoku++;}
+ 
+                yy = (r - 1) % 100;
+                c = (r - 1) - yy;
+                g = yy + (yy / 4);
+                var wn = (((((c / 100) % 4) * 5) + g) % 7);
+                wn += dzienRoku - 1;
+                wn %= 7; 
+                var w=parseInt(wn);
+
+                /*
+                if(m<3){
+                    r=r-1; 
+                    m=m+12;
+                }
+
+                d=r+r/4-r/100+r/400+3*m-(2*m+1)/5+d+1;
+                let x=parseInt(d);
+                d=(d-(d/7))*7; */
+                
+                wynik.innerHTML = nd[w];
+
+                }
+        </script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>układy równań liniowych</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body>
+    <h4>układy równań liniowych</h4>
+<div>
+    a<sub>1</sub>x + b<sub>1</sub>y = c<sub>1</sub> <br>
+    a<sub>1</sub>x + b<sub>1</sub>y = c<sub>1</sub> <br>
+
+    <input type="number" min="-30" max="30" id="a1">x+ <input type="number" min="-30" max="30" id="b1"> y= <input type="number" min="-30" max="30" id = "c1"><br>
+        
+    <input type="number" min="-30" max="30" id="a2">x+ <input type="number" min="-30" max="30" id="b2"> y= <input type="number" min="-30" max="30" id = "c2"><br>
+        
+    <input type = "button" value = "oblicz" onclick="zmien()">
+    <p id = "wynik">wynik</p>
+    <p id = "wynik_img">wynik</p>
+</div></body>
+    <script type="text/javascript">
+        const zmien = () => {
+                const a1 = parseInt(this.a1.value);
+                const b1 = parseInt(this.b1.value);
+                const c1 = parseInt(this.c1.value);
+                const a2 = parseInt(this.a2.value);
+                const b2 = parseInt(this.b2.value);
+                const c2 = parseInt(this.c2.value);
+
+                const W=a1*b2-b1*a2;
+                const Wx=c1*b2-b1*c2;
+                const Wy=a1*c2-c1*a2;
+
+                if(W!=0){
+                    const x = Wx/W;
+                    const y = Wy/W;
+
+                    wynik.innerHTML = "x="+x+"  y="+y;
+                }else if(W==0 && Wx!=0 || Wy!=0){
+                    wynik.innerHTML = "układ jest sprzeczny";
+                }else if(W==0 && Wx==0 || Wy==0){
+                    wynik.innerHTML = "układ jest nieoznaczony";
+                }else{
+                    wynik.innerHTML = "error";
+                }
+
+//                wynik_img.innerHTML = "<img alt=\"przykładowy obrazek\" src=\"https://i.ytimg.com/vi/VLjMMuRX-64/maxresdefault.jpg\" width=\"806\" height=\"453\">";
+            }
+        </script>
+</html>
