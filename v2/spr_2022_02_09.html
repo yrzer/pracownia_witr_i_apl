@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>zamiana css</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    <meta name = "author" content="grzegorz szczepkowski 2p">
+    <style type="text/css">
+        td,table{
+            border:1px solid black;
+            margin:1px auto;
+        }
+    </style>
+</head><body><center>
+    <h4>sklepik z kawą</h4>
+<div>
+    <table>
+        <tr>
+            <td>numer kawy</td>
+            <td>nazwa</td>
+            <td>cena za 1 dekagram</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Kawa palona Arabica</td>
+            <td>8 zł</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Kawa palona Robusta</td>
+            <td>9 zł</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Kawa bezkofeinowa</td>
+            <td>11 zł</td>
+        </tr>
+
+    </table><br>
+        nazwa <select id="l">
+        <option value="0">Kawa palona Arabica</option>
+        <option value="1">Kawa palona Robusta</option>
+        <option value="2">Kawa bezkofeinowa</option>
+        </select><br>
+        ilość w dekagram <input type="number" id="c"><br><br>
+    <input type = "button" value = "zamień" onclick="zmien()"><br><br>
+    <div id = "wynik"></div>
+</center>
+</div></body>
+    <script type="text/javascript">
+    
+        const zmien = () => {
+                const k = [8,9,11]; // zdefinowanie cen w tabela
+                const l = this.l.value; // zbierz wybór kawy
+                const c = this.c.value; // zbierz ilość
+
+                wynik.innerHTML = "ksozt zamówienia wynośi "+(c*k[l])+" zł"; // wstawianie w html
+
+                }
+        </script>
+</html>

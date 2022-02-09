@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>zamiana css</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body>
+    <h4>ciąg liczb</h4>
+<div>
+    pierwsza liczba <input value="10" type="number" id="l1"><br>
+    ilość liczb <input value="10" type="number" min="1" id="l2"><br>
+    różnica <input value="10" type="number" min="1" id="l3">
+   
+    <input type = "button" value = "zamień" onclick="zmien()"><br><br>
+    <div id = "wynik">ciąg: </div>
+</div></body>
+    <script type="text/javascript">
+    
+        const zmien = () => {
+                const l1 = parseInt(this.l1.value);
+                const l2 = parseInt(this.l2.value);
+                const l3 = parseInt(this.l3.value);
+                let w = "ciąg: ";
+                let a=1;
+                let txt = "a";
+
+                for(i=l1;a<=l2;i++){
+                    if((i%l3)==0){
+                        w=w+i+", ";
+                        a++;
+                    }
+                }
+                
+                    
+                wynik.innerHTML = w;
+
+                }
+        </script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>zamiana css</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    <meta name = "author" content="grzegorz szczepkowski 2p">
+    <style type="text/css">
+        td,table{
+            border:1px solid black;
+            margin:1px auto;
+        }
+    </style>
+</head><body><center>
+    <h4>ile bendą kosztowały twoje zakupy?</h4>
+<div>
+    <table>
+        <tr>
+            <td>Zeszyt 60 karte</td>
+            <td>6,50 zł</td>
+        </tr>
+        <tr>
+            <td>Zeszyt 32 kartki</td>
+            <td>4,50 zł</td>
+        </tr>
+        <tr>
+            <td>Cyrkiel</td>
+            <td>6,20 zł</td>
+        </tr>
+        <tr>
+            <td>Linijka 30 cm</td>
+            <td>7,20 zł</td>
+        </tr>
+        <tr>
+            <td>Ekierka</td>
+            <td>8,50 zł</td>
+        </tr>
+        <tr>
+            <td>Linijka 50 cm</td>
+            <td>8,20 zł</td>
+        </tr>
+    </table><br>
+        wybierz artykuł <select id="a">
+            <option value="0">Zeszyt 60 karte</option>
+            <option value="1">Zeszyt 32 kartki</option>
+            <option value="2">Cyrkiel</option>
+            <option value="3">Linijka 30 cm</option>
+            <option value="4">Ekierka</option>
+            <option value="5">Linijka 50 cm</option>
+        </select><br>
+        liczba sztuk <input type="number" id="l"><br><br>
+    <input type = "button" value="oblicz" onclick="zmien()"><br><br>
+    <div id = "wynik"></div>
+</center>
+</div></body>
+    <script type="text/javascript">
+    
+        const zmien = () => {
+                const k = [6.5,4.5,6.2,7.2,8.5,8.2]; 
+                const a = this.a.value; 
+                const l = this.l.value; 
+                wynik.innerHTML = "ksozt zamówienia wynośi "+(l*k[a])+" zł"; 
+
+                }
+        </script>
+</html>
