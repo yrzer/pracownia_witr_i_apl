@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>dzielniki</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body><center>
+    <h4>liczba pierwsza</h4>
+<div>
+    podaj liczbe <input type="number" min="1" id="l"><input type = "button" value = "oblicz" onclick="zmien()"><br>
+    <span id="wynik">----</span>
+</div></center></body>
+    <script type="text/javascript">
+    
+        const zmien = () => {
+                var l = parseInt(this.l.value);
+                var i = 1; var s = ""; var a=0;
+                while (i <= l) {
+                    if (l%i==0){
+                    s+=i+", ";
+                    a++;}
+                    i++;
+                }
+                if(a==2) s= "liczba piersza";
+                else s+="nie liczba piersza";
+                wynik.innerHTML = s;
+
+                }
+        </script></html>

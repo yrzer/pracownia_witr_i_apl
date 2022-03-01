@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>dzielniki</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body><center>
+    <h4>podzielniki danej liczby</h4>
+<div>
+    podaj liczbe <input type="number" min="1" id="l"><input type = "button" value = "oblicz" onclick="zmien()"><br>
+    <span id="wynik">----</span>
+</div></center></body>
+    <script type="text/javascript">
+    
+        const zmien = () => {
+                var l = parseInt(this.l.value);
+                var i = 1; var s = "";
+                while (i <= l) {
+                    if (l%i==0){
+                    s+=i+", ";
+                        }
+                    i++;
+                }
+                
+                wynik.innerHTML = s;
+
+                }
+        </script></html>

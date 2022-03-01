@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>dzielniki</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body><center>
+    <h4>największy wspólny dzielnik</h4>
+<div>
+    podaj pierwszą liczbe <input type="number" min="1" id="a"><br>
+    podaj pierwszą liczbe <input type="number" min="1" id="b"><br>
+    <input type = "button" value = "oblicz" onclick="zmien()"><br>
+    najwięlszy wspólny dzielnik: <span id="wynik">----</span>
+</div></center></body>
+    <script type="text/javascript">
+    
+        const zmien = () => {
+                var a = parseInt(this.a.value);
+                var b = parseInt(this.b.value);
+                while (a != b) {
+                    if (a>b)a=a-b;
+                    else b=b-a;
+                }
+                
+                wynik.innerHTML = a;
+
+                }
+        </script></html>
