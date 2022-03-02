@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>piramida</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body><center>
+    <h4>tabliczka mnożenia</h4>
+<div>
+    <span id="wynik">----</span>
+</div></center></body>
+    <script type="text/javascript">
+                let w = "<table>";
+                for (let i = 0; i <= 10; i++) {
+                    w+="<tr><td>"+i+"</td>";
+                    for(let a = 1; a <= 10; a++){
+                        if(i==0) w+="<td>" + a+ "</td>";
+                        else w+= "<td>"+(a*i)+ "</td>";
+                    }
+                    w+="</tr>";
+                }
+                
+                wynik.innerHTML = w+"</table>";
+
+        </script></html> 
