@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>piramida</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body><center>
+    <h4>piramida gwiazdek</h4>
+<div>
+    <input type = "button" value = "oblicz" onclick="zmien()"><br><br>
+    <span id="wynik">----</span>
+</div></center></body>
+    <script type="text/javascript">
+        const zmien = () => {
+                let w = ""; let i = 0;
+                p = parseInt(prompt("ile linijek", "13"));
+                for (let i = 0; i < p; i++) {
+                    for (let a = 0; a < i; a++) {
+                        w+="*";
+                    }
+                w+="<br>";
+                }
+                
+                wynik.innerHTML = w;
+
+                }
+        </script></html>
