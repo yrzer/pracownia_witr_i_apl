@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>kartkówka</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body><center>
+<div>
+    początkowa liczbe <input type="number" min="1" id="a"><br>
+    ostatnia liczbe <input type="number" min="1" id="b"><br>
+    <input type = "button" value = "oblicz" onclick="zmien()"><br>
+    <span id="wynik">----</span>
+</div></center></body>
+    <script type="text/javascript">
+    
+        const zmien = () => {
+                var a = parseInt(this.a.value);
+                var b = parseInt(this.b.value);
+                // pobieranie liczb
+                var w= ""; // zdefinowanie stringa
+                if(a<b){ // sprawdzenie co jest większe
+                    for(i=a; i<b; i++){ // pętla wypsująca liczby
+                        w+=i+","; // dopisywanie do stringa
+                    }
+                }else if(a>b){ // sprawdzenie co jest większe
+                    for(i=a; i>b; i--){ // pętla wypsująca liczby
+                        w+=i+","; // dopisywanie do stringa
+                    }
+                }else { // błąd lub taka sama
+                    w= "error lub taka sama";
+                } 
+                
+                wynik.innerHTML = w; // wprowadzenie stringa do html
+
+                }
+        </script></html>
