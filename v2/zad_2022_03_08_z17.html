@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="pl"><head>
     <meta charset="UTF-8">
-	<title>tak</title>
+	<title>obliczanie</title>
     <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
 </head><body><center>
     <fieldset>
@@ -15,16 +15,16 @@
                 const t = p.value;
                 let z = t.length;
                 w1.innerHTML = "ilość znaków: " + z;
-
-                let i = 0, w=0, s=0;
+                ////////////////
+                let i=0, w=0, s=0;
                 while (i!=-1) {
                     i=t.indexOf(" ",s);
                     if(i!=-1){
                         w++;
-                        s=index+1;
+                        s=i+1;
                     }
                 }
-                w++;
-                w2.innerHTML = "ilość spacji: " + w;
+                w2.innerHTML = "ilość wyrazów: " + w;
+                
         }
         </script></html> 

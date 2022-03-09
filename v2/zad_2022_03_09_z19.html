@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>zamiana txt</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body><center>
+    <fieldset>
+    <legend>ilość znaków</legend>
+    a= <input type="number" value="1" id="a"><br>
+    b= <input type="number" value="100" id="b">
+</fieldset>
+podaj ilość elemetów tablicy <input type="number" value="50" id="n"><br>
+<input type = "button" value = "generowanie liczb" onclick="tab()"><br>
+<span id="w"></span><br>
+<span id="z"></span>
+</center></body>
+    <script type="text/javascript">
+        let t = [];
+        const tab = () => {
+            const a = parseInt(this.a.value);
+            const b = parseInt(this.b.value);
+            const n = parseInt(this.n.value);
+
+            for(let i=0;i<n; i++){
+                t[i]= Math.floor(Math.random()*(b-a)+a)+1;
+            }
+            pri(); // print 
+        }
+        const pri = () => {
+            const str = t.join(", ");
+            
+            var hym = "";
+            // Znajdź najmniejszy i największy element w tablicy.
+                let max=t[0];
+                let min=t[0];
+                for(let x of t){
+                    if(x>max) {max = x};
+                    if(x<min) {min = x};
+                };
+                hym+= "najmniejsza "+max+"<br>największa "+min+"<br><br>";
+            // Oblicz średnią wartość elementów tablicy.
+
+            // Wylicz ilość wystąpień w tablicy cyfry podanej przez użytkownika
+                
+            // Posortuj elementy tablicy w porządku rosnącym.
+                // t.sort((a,b)=>{return(b-a);})
+            // Zwiększ wartość każdego elementu tablicy podnosząc go do kwadratu.
+
+            // Policz ilość liczb parzystych i nieparzystych w tablicy.
+
+            z.innerHTML =hym;
+            w.innerHTML = str;
+        }
+        </script></html> 
