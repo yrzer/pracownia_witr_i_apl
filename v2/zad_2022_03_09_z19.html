@@ -11,6 +11,7 @@
 podaj ilość elemetów tablicy <input type="number" value="50" id="n"><br>
 <input type = "button" value = "generowanie liczb" onclick="tab()"><br>
 <span id="w"></span><br>
+<span id="w2"></span><br>
 <span id="z"></span>
 </center></body>
     <script type="text/javascript">
@@ -25,6 +26,17 @@ podaj ilość elemetów tablicy <input type="number" value="50" id="n"><br>
             }
             pri(); // print 
         }
+        const w2s = "<fieldset><legend>wyszukiwanie</legend>podaj liczbe <input type=\"number\" value=\"1\" id=\"w2l\"><br><input type = \"button\" value = \"szukaj\" onclick=\"w2p()\"><br></fieldset>"
+        const w2p = () => {
+            const w2l = parseInt(this.w2l.value);
+            let i=0;
+            for(let x of t){
+                if(x== w2l) i++;
+            }
+            if(i != 0){
+                w2.innerHTML = w2s + "<br>powtarza sie : "+ i;
+            }else  w2.innerHTML = w2s + "<br>brak liczby";
+        }
         const pri = () => {
             const str = t.join(", ");
             
@@ -36,16 +48,37 @@ podaj ilość elemetów tablicy <input type="number" value="50" id="n"><br>
                     if(x>max) {max = x};
                     if(x<min) {min = x};
                 };
-                hym+= "najmniejsza "+max+"<br>największa "+min+"<br><br>";
+                hym+= "<br>najmniejsza "+max+"<br>największa "+min+"<br><br>";
             // Oblicz średnią wartość elementów tablicy.
-
+                var suma = 0;
+                for(let x of t){
+                    suma+=x;}
+                const d = t.length; 
+                hym+= "średnia "+ (suma/d) +"<br><br>";
             // Wylicz ilość wystąpień w tablicy cyfry podanej przez użytkownika
                 
-            // Posortuj elementy tablicy w porządku rosnącym.
-                // t.sort((a,b)=>{return(b-a);})
+                w2.innerHTML = w2s;
+                
+            // Posortuj elementy tablicy w porządku rosnącym. 
+               hym+="<br> posortowane: "+ t.sort((a,b)=>{return(b-a);})+"<br><br>";
             // Zwiększ wartość każdego elementu tablicy podnosząc go do kwadratu.
-
+                var kw = " ";
+                for(let x=0; x<d;x++){
+                    kw+=Math.pow(t[x], 2) +", ";
+                    if(x/2 == d/2) kw+="<br>";
+                }
+                hym+="do kwadratu:<br>"+ kw +"<br><br>";
             // Policz ilość liczb parzystych i nieparzystych w tablicy.
+            var p = 0; var np = 0;
+                for(let x=0; x<=d;x++){
+                    if(t[x]%2==0){
+                        p++
+                    }
+                    if(t[x]%2!=0){
+                        np++
+                    }
+                }
+                hym+= "parzyste: "+ p +"<br>nieparzyste: "+ np +"<br><br>";
 
             z.innerHTML =hym;
             w.innerHTML = str;
