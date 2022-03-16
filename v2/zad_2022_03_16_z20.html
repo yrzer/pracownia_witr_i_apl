@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>lotto</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body><center>
+    <input type = "button" value = "losuj lotto" onclick="tab()"><br>
+<span id="w"></span><br>
+<span id="z"></span>
+</center></body>
+    <script type="text/javascript">
+        let lotto = [];
+        const tab = () => {
+            let los=0;var a= "";
+            for(let i=0;i<=5;i++){
+                los= Math.floor(Math.random()*49)+1;
+                if(lotto.indexOf(los)==-1){
+                    lotto[i]=los;
+                }else{
+                    i--;
+                }
+            }
+            lotto.sort((a,b)=>a-b);
+            for(let i=0;i<=5;i++){
+                a+= "<img src=\"lotto\/p"+lotto[i]+".png\" width=100 height=100>";
+            }
+            w.innerHTML = a;
+        }
+        </script></html> 
