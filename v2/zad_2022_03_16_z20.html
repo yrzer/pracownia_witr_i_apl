@@ -1,13 +1,18 @@
 <!DOCTYPE html><html lang="pl"><head>
     <meta charset="UTF-8">
 	<title>lotto</title>
+    <div id="load"></div>
     <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
 </head><body><center>
-    <input type = "button" value = "losuj lotto" onclick="tab()"><br>
+    <input type = "button" value = "losuj lotto" onclick="tab()" style="padding: 15px 32px;text-align: center;text-decoration: none;font-size: 16px;"><br><br>
 <span id="w"></span><br>
-<span id="z"></span>
 </center></body>
     <script type="text/javascript">
+        var l="";
+        for(let i=1;i<=49;i++){
+                l+= "<link rel=\"preload\" href=\"lotto\/p"+i+".png\"as=\"image\">";
+            }
+        load.innerHTML = l;
         let lotto = [];
         const tab = () => {
             let los=0;var a= "";

@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>lotto</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    <style>
+    .vb{
+        background-color: rgb(255, 123, 0);
+    }
+    </style>
+</head><body><center>
+    <h1>tablica 2 wymiarowa</h1>
+    <fieldset>
+    <legend>przedział losowania</legend>
+    minimum= <input type="number" value="1" id="min"><br>
+    maximum= <input type="number" value="20" id="max">
+    </fieldset><br>
+    <fieldset>
+        <legend>rozmiar tablicy</legend>
+        n= <input type="number" value="5" id="n"><br>
+        m= <input type="number" value="5" id="m">
+        </fieldset><br>
+        <fieldset>
+            <legend>przeszukiwanie tablicy</legend>
+            podaj liczbe= <input type="number" value="1" id="s"><br>
+            <input type = "button" value = "szukaj" onclick="szukaj()"><br>
+        </fieldset><br>
+
+    <input type = "button" value = "generowanie tablice" onclick="tab()"><br>
+    <input type = "button" value = "zaznacz parzyste" onclick="tab1()"><br>
+    <input type = "button" value = "przekątną" onclick="tab2()"><br>
+<span id="w"></span><br>
+</center></body>
+    <script type="text/javascript">
+        let t = [];
+        let row, col;
+        const tab = () => {
+            const min = parseInt(this.min.value);
+            const max = parseInt(this.max.value);
+            const s = parseInt(this.s.value);
+            row = parseInt(this.n.value);
+            col = parseInt(this.m.value);
+            for(let i=0;i<row;i++){
+                t[i]= [];}
+            for(let x=0;x<row;x++){
+                for(let i=0;i<col;i++){
+                t[x][i]= Math.floor(Math.random()*(min-max))+max;
+            }}
+            var wynik= "<table>";
+            for(let x=0;x<row;x++){
+                wynik+="<tr>";
+                for(let i=0;i<col;i++){
+                wynik+="<td>"+t[x][i]+"</td>";
+                }
+                wynik+="</tr>";
+            }
+            w.innerHTML = wynik+"</table>";
+        }
+        const tab1 = () => {
+        
+        }
+        const tab2 = () => {
+            tab();
+            var wynik= "<table>";
+            for(let x=0;x<row;x++){
+                wynik+="<tr>";
+                    for(let i=0;i<col;i++){
+                        if(x==i){
+                           wynik+="<td class=\"vb\">";
+                           }else{
+                            wynik+="<td>";
+                            }
+                    }    
+                wynik+=+t[x][i]+"</td>";
+                }
+                wynik+="</tr>";
+            }
+            w.innerHTML = wynik+"</table>";
+        </script></html> 
