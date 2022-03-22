@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>data</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body><center>
+    <span id="w"></span>
+</center></body>
+    <script type="text/javascript">
+        let data = new Date();
+        let str = "";
+        let m = [
+            ["Styczeń","Luty","Marzec","Kwiecień","Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"],
+            [31,28,31,30,31,30,31,31,30,31,30,31]];
+        let d = ["Niedziela", "Poniedziałek","Wtorek","Środa","Czwartek", "Piątek", "Sobota"]
+        str += "dziś jest "+ data.getDate() + " " + m[0][data.getMonth()] + " " + data.getFullYear() + " " + d[data.getDay()] +" godzina "+ data.getHours()+":"+ data.getMinutes()+":"+ data.getSeconds()+"<br>";
+        
+        var dni = 0;
+        
+        if (data.getFullYear() % 400 == 0) {//is a leap year
+            for(var i = 0 ; i < data.getMonth(); i++){
+                if(i==1){ // czyli luty
+                    dni += m[1][i] + 1;
+                }else{
+                    dni += m[1][i];}
+            } 
+            dni += data.getDate();
+             dni = 366 -dni;
+         }else if (data.getFullYear() % 100 == 0) {//is not a leap year
+            for(var i = 0 ; i < data.getMonth(); i++){
+                dni += m[1][i];
+            } 
+            dni += data.getDate();
+             dni = 365 -dni;
+         }else if (data.getFullYear() % 4 == 0) {// }is a leap year
+            for(var i = 0 ; i < data.getMonth(); i++){
+                if(i==1){ // czyli luty
+                    dni += m[1][i] + 1;
+                }else{
+                    dni += m[1][i];}
+            } 
+            dni += data.getDate();
+             dni = 366 -dni;
+        }else {// is not a leap year*/
+            for(var i = 0 ; i < data.getMonth(); i++){
+                dni = dni + m[1][i];
+            } 
+            dni = dni + data.getDate();
+             dni = 365 -dni;
+         }
+        str += "do końca roku jest "+ dni; // jeszcze minuty i skeundy
+        w.innerHTML = str;
+        </script></html> 
