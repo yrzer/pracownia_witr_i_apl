@@ -7,28 +7,34 @@
     <input type="submit" value="zeruj" onclick="zeruj()">
     <input type="submit" value="stop" onclick="stop()"><br>
     <span id="w"></span>
-    <svg width="100" height="100" id="kulka" style="position:absolute; left:0px;top:0px">
+    <svg width="100" height="100" id="kulka" style="position:absolute; left:0px;top:300px">
         <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
       </svg>
 </center></body>
     <script type="text/javascript">
-        let x, y;
+        let x, y; let gd = true;
+        var kx = 2;
+        var ky = 2;
         var t_id = null;
         const wys =()=>{
-            w.innerHTML = l;l++;
-        };
-        const start =()=>{
             x = parseInt(kulka.style.left);
             y = parseInt(kulka.style.top);
-            x+=2;
-            y+=2;
+            if(y<200 || y<400 || g == true){ ky = -2;}
+            if(y>400){ ky = 2; g = false;}
+            if(y>200 || y<400 || g == false){ ky = 2;}
+            if(y>200){ ky = -2; g = true;}
+            x+=kx;y+=ky;
             kulka.style.left = x+"px";
             kulka.style.top = y+"px";
-            // t_id = setInterval(wys,1000);
-            // p_s.disabled = true;
+        };
+        const start =()=>{
+            t_id = setInterval(wys,15);
+            p_s.disabled = true;
         };
         const zeruj =()=>{
-            x , y = 0;
+            x = 0 ; y = 300;
+            kulka.style.left = x+"px";
+            kulka.style.top = y+"px";
         };
         const stop =()=>{
             clearInterval(t_id);
