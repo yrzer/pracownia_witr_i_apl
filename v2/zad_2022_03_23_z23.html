@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>stoper</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+</head><body><center>
+    <input type="submit" value="start" onclick="start()" id="p_s">
+    <input type="submit" value="zeruj" onclick="zeruj()">
+    <input type="submit" value="stop" onclick="stop()"><br>
+    <span id="w"></span>
+</center></body>
+    <script type="text/javascript">
+
+        var l = 0;
+        var t_id = null;
+        const wys =()=>{
+            w.innerHTML = l;l++;
+        };
+        const start =()=>{
+            t_id = setInterval(wys,1000);
+            p_s.disabled = true;
+        };
+        const zeruj =()=>{
+            l=0;
+            w.innerHTML = l;
+        };
+        const stop =()=>{
+            clearInterval(t_id);
+            t_id = null;
+            p_s.disabled = false;
+        }
+        
+        
+        </script></html> 
