@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>aaaaaaa</title><!-- juz nie wiem jak zapisywac pliki-->
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    </head><body><center>
+        <h4>oblicznie dnia tygodnia</h4>
+    <div>
+        imie <input type="text" id="i"><br>
+        nazwisko <input type="text" id="n"><br>
+        nr telefonu <input type="text" id="t"> format +48 (022) 00000<br>
+        kod pocztowy <input type="text" id="k"> format 00-000<br>
+        <input type="button" value="oblicz" onclick="zmien()"><br>
+        <span id="w">----</span>
+    </div></center>
+    </body>
+        <script type="text/javascript">
+        
+            const zmien = () => {
+                    const imie = i.value;
+                    const naz = n.value;
+                    const nrt = t.value;
+                    const kod = k.value;
+
+                    const imie_r =/^[A-ZŁŻŹ]{1}[a-ząęćłóśźż]{2,}$/;
+                    if(!imie_r.test(imie)){
+                        alert ( "nieprawidłowe imie");
+                    }
+
+                    
+                    w.innerHTML = "";
+    
+                    }
+            </script>
+    </html>
