@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>obrazki</title>
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    <style>
+        img {
+    max-width: 90%;
+    max-height: 90%;
+        }
+        h2 {
+    position:absolute;
+    top:47%;
+    left:47%;
+    }
+    </style>
+    <div id="load"></div>
+</head>
+<script type="text/javascript">
+    const z = [
+    "https://wallpapercave.com/wp/wp3181562.jpg",
+    "https://wallpaperaccess.com/full/2029165.jpg",
+    "https://wallpapercave.com/wp/wp2719096.jpg",
+    "https://wallpaperbat.com/img/418314-free-download-download-wallpaper-1920x1080-bird-silhouette-vector.jpg",
+    "https://my4kwallpapers.com/wp-content/uploads/2021/04/Minimalist-Wallpaper.jpg",
+    "https://my4kwallpapers.com/wp-content/uploads/2021/02/Cool-4k-Wallpaper.jpg"
+    ];
+    const st =["pierwszy text","drugi text","trzeci text","czwarty text","piąty text","szusty text"];
+
+    var l="";
+    for(let i=0;i<=5;i++){
+            l+= "<link rel=\"preload\" href=\""+z[i]+"\"as=\"image\">";
+        }
+    load.innerHTML = l;
+
+    let i = 0;
+    
+    const cs =()=>{
+
+        if(5<=i){i=0;};
+        image.src=z[i];
+        text.innerHTML= st[i];
+        i++;
+    }
+    setInterval("cs();",3000);
+    </script>
+<body onload="cs()"><center>
+    <h2  id="text">text</h2>
+    <img src="" id="image" alt="obraz">
+</center></body ></html> 
