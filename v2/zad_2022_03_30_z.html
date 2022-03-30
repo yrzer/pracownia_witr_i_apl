@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>aaaaaaa</title><!-- juz nie wiem jak zapisywac pliki-->
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    </head><body><center>
+        <h4>oblicznie dnia tygodnia</h4>
+    <div>
+        hasło <input type="text" value="password" id="haslo" onkeyup="zmien()"><br>
+        siła: <span id="w">----</span>
+    </div></center>
+    </body>
+        <script type="text/javascript">
+        
+            const zmien = () => {
+                    const h = haslo.value;
+                    n = "";
+                    if(h.length>=7 && /[0-9]/.test(h)){
+                        w.style.color="green";
+                        n = "dobre";
+                    }
+                    w.innerHTML = n;
+    
+                    }
+            </script>
+    </html>

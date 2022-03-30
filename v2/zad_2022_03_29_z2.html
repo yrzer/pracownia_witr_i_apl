@@ -5,10 +5,10 @@
     </head><body><center>
         <h4>oblicznie dnia tygodnia</h4>
     <div>
-        imie <input type="text" id="i"><br>
-        nazwisko <input type="text" id="n"><br>
-        nr telefonu <input type="text" id="t"> format +48 (022) 00000<br>
-        kod pocztowy <input type="text" id="k"> format 00-000<br>
+        imie <input type="text" value="Imię" id="i"><br>
+        nazwisko <input type="text" value="Nazwisko" id="n"><br>
+        nr telefonu <input type="text" value="+48(020)000000" id="t"> format +48(022)000000<br>
+        kod pocztowy <input type="text" value="00-0000" id="k"> format 00-000<br>
         <input type="button" value="oblicz" onclick="zmien()"><br>
         <span id="w">----</span>
     </div></center>
@@ -21,11 +21,22 @@
                     const nrt = t.value;
                     const kod = k.value;
 
-                    const imie_r =/^[A-ZŁŻŹ]{1}[a-ząęćłóśźż]{2,}$/;
+                    const imie_r = /^[A-ZŁŻŹ]{1}[a-ząęćłóśźż]{2,}$/;
                     if(!imie_r.test(imie)){
                         alert ( "nieprawidłowe imie");
                     }
-
+                    const naz_r =/^[A-ZŁŻŹ]{1}[a-ząęćłóśźż]{2,}$/; // *(-[A-ZŁŻŹ]{1})*[a-ząęćłóśźż]{2,}
+                    if(!naz_r.test(naz)){
+                        alert ( "nieprawidłowe nazwisko");
+                    }
+                    const nrt_r =/^\+[0-9]{2}\([0-9]{3}\)[0-9]{6}$/;
+                    if(!nrt_r.test(nrt)){
+                        alert ( "nieprawidłowe numer telefonu");
+                    }
+                    const kod_r =/[0-9]{2}\-[0-9]{4}$/;
+                    if(!kod_r.test(kod)){
+                        alert ( "nieprawidłowe kod pocztowy");
+                    }
                     
                     w.innerHTML = "";
     
