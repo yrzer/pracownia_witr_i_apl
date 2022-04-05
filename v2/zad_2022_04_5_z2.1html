@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>aaaaaaa</title><!-- juz nie wiem jak zapisywac pliki-->
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    </head><body><center>
+        <h4>obiekty 2</h4>
+        
+    <div id="w">>
+        -
+    </div></center>
+    </body>
+        <script type="text/javascript">
+            const c_paliwa = 7.80;
+        function oferta(marka,cena,spalanie,rocznik){
+                this.marka = marka;
+                this.cena = cena;
+                this.spalanie = spalanie;
+                this.rocznik = rocznik;
+                this.koszt = function(){
+                    return this.spalanie/100*c_paliwa;
+                }
+                this.wiek = function(){
+                    data = new Date();
+                    let lata =  data.getFullYear()-this.rocznik;
+                    if(lata == 1){
+                        lata += "rok";
+                    }else{
+                    lata += "lat";}
+                    return lata;
+                }
+
+            }
+        
+        const button = ()=>{
+
+            
+                
+            }
+            
+            </script>
+    </html>
