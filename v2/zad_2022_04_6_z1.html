@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>aaaaaaa</title><!-- juz nie wiem jak zapisywac pliki-->
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    </head><body><center>
+        <h4>oblicz</h4>
+        <input type="radio" id="i" name="rb" > natężenie
+        <input type="radio" id="u" name="rb" > napięcie
+        <input type="radio" id="r" name="rb" > rezystancja<br> <br>
+        natężenie <input type="number" id="it" value="1"><br>
+        napięcie <input type="number" id="ut" value="1"><br>
+        rezystancja <input type="number" id="rt" value="1"><br>
+        <input type="button" onclick="zmien()" value="oblicz">
+    <div id="w">
+        -
+    </div></center>
+    </body>
+        <script type="text/javascript">
+        class Ohm{
+            #u; // prywatne pola // napięcie
+            #i; // niedostępne poza klasą 
+            #r;
+
+            get s_u(){
+                return this.#u;
+            };
+            set s_u(value){
+                this.#u=value;
+            };
+            get s_i(){
+                return this.#i;
+            };
+            set s_i(value){
+                this.#i=value;
+            };
+            get s_r(){
+                return this.#r;
+            };
+            set s_r(value){
+                this.#r=value;
+            };
+            o_r(){ // rezytancja
+                return this.s_u/this.s_i;
+            }
+            o_i(){ // natężenie
+                 return this.s_u/this.s_r;
+            }
+            o_u(){ // napięcie
+                return this.s_i*this.s_r;
+            }
+        }
+
+        i.addEventListener("change",function(){
+            it.disabled = true;
+            ut.disabled = false;
+            rt.disabled = false;
+        })
+        u.addEventListener("change",function(){
+            it.disabled = false;
+            ut.disabled = true;
+            rt.disabled = false;
+        })
+        r.addEventListener("change",function(){
+            it.disabled = false;
+            ut.disabled = false;
+            rt.disabled = true;
+        })
+
+        const zmien =()=>{
+            let ohm =new Ohm;
+            if(i.checked){// nateżenie
+                ohm.s_u=parseFloat(ut.value);
+                ohm.s_r=parseFloat(rt.vaule);
+                w.innerHTML = ohm.o_i();
+            }
+            if(r.checked){// rezystancja
+                ohm.s_u=parseFloat(ut.value);
+                ohm.s_i=parseFloat(it.vaule);
+                w.innerHTML = ohm.o_r();
+            }
+            if(u.checked){// napięcie
+                ohm.s_r=parseFloat(rt.value);
+                ohm.s_i=parseFloat(it.vaule);
+                w.innerHTML = ohm.o_u();
+            }
+        }
+        </script>
+    </html>
