@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>aaaaaaa</title><!-- juz nie wiem jak zapisywac pliki-->
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    <style>
+        input{width: 3em;}
+        .z{
+            font-size: 2em;
+        }
+        .my{
+            font-size: 3em;
+            letter-spacing: -4px;
+        }
+    </style>
+    </head><body><center>
+        <h4>kalkulator</h4>
+        <table>
+            <tr>
+                <td>
+                    <input type="number" id="l1g">
+                </td> <td></td> <td>
+                    <input type="number" id="l2g">
+                </td> <td></td> <td>
+                    <input type="number" id="lwg">
+                </td>
+            </tr>
+            <tr>
+                <td class="my">----</td> <td class="z" id="znak">+</td> <td class="my">----</td> <td class="z">=</td> <td class="my">----</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="l1d">
+                </td> <td></td> <td>
+                    <input type="number" id="l2d">
+                </td> <td></td> <td>
+                    <input type="number" id="lwd">
+                </td>
+            </tr>
+        </table>
+        <input type="button" onclick="dod()" value="+">
+        <input type="button" onclick="dod()" value="-"><br>
+        <input type="button" onclick="dod()" value="*">
+        <input type="button" onclick="dod()" value="/">
+    
+    </center></body>
+        <script type="text/javascript">
+            class U{
+                #L;
+                #M;
+
+                get m(){// mianownik
+                return this.#M;
+                };
+                set m(value){// mianownik
+                    if(value == 0){
+                        alert("mianownik nie może być zerowy")
+                    }
+                    this.#M=value;
+                };
+                get l(){
+                    return this.#L;
+                };
+                set l(value){
+                    this.#L=value;
+                };
+
+                nwd(x,y){
+                    while(x!=y){
+                        if(x>y){
+                            x=x-y;
+                        }else{
+                            y=y-x;
+                        }
+                    }
+                    return x;
+                }
+
+                sk(){
+                    let s=this.nwd(this.l,this.m);
+                    this.l = this.l/s;
+                    this.m = this.m/s;
+                }
+                nww(x,y){
+                    return x/this.nwd(x,y)*y;
+                }
+                d(u1,u2){// dodaj
+                    this.m=this.nww(u1.m,u2.m);
+                    this.l=this.m / u1.m * u1.l + this.m / u2.m * u2.l;
+                    this.sk();
+                }
+                o(u1,u2){// odejmij
+                    this.m=this.nww(u1.m,u2.m);
+                    this.l=this.m / u1.m * u1.l - this.m / u2.m * u2.l;
+                    this.sk();
+                }
+                mn(u1,u2){// mnożenie
+                    this.m= this.m * u2.l;
+                    this.l=this.l * u1.l;
+                    this.sk();
+                }
+                dz(u1,u2){// dzielenie
+                    this.m= this.l * u2.l;
+                    this.l= this.m * u1.l;
+                    this.sk();
+                }
+            }
+
+            const dod =()=>{
+                u1 = new U();
+                u2 = new U();
+                u3 = new U();
+
+                u1.l=1;
+                u1.m=3;
+                u2.l=1;
+                u2.m=6;
+                u3.d(u1,u2);
+                console.log(u3.l+"/"+u3.m)
+            }
+        
+        </script>
+    </html>
