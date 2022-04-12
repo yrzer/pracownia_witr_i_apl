@@ -17,11 +17,11 @@
         <table>
             <tr>
                 <td>
-                    <input type="number" id="l1g">
+                    <input type="number" id="l1g" value="1">
                 </td> <td></td> <td>
-                    <input type="number" id="l2g">
+                    <input type="number" id="l2g" value="4">
                 </td> <td></td> <td>
-                    <input type="number" id="lwg">
+                    <input type="number" id="lwg" value="">
                 </td>
             </tr>
             <tr>
@@ -29,18 +29,18 @@
             </tr>
             <tr>
                 <td>
-                    <input type="number" id="l1d">
+                    <input type="number" id="l1d" value="2">
                 </td> <td></td> <td>
-                    <input type="number" id="l2d">
+                    <input type="number" id="l2d" value="3">
                 </td> <td></td> <td>
-                    <input type="number" id="lwd">
+                    <input type="number" id="lwd" value="">
                 </td>
             </tr>
         </table>
         <input type="button" onclick="dod()" value="+">
-        <input type="button" onclick="dod()" value="-"><br>
-        <input type="button" onclick="dod()" value="*">
-        <input type="button" onclick="dod()" value="/">
+        <input type="button" onclick="ode()" value="-"><br>
+        <input type="button" onclick="mno()" value="*">
+        <input type="button" onclick="dzi()" value="/">
     
     </center></body>
         <script type="text/javascript">
@@ -65,14 +65,11 @@
                 };
 
                 nwd(x,y){
-                    while(x!=y){
-                        if(x>y){
-                            x=x-y;
-                        }else{
-                            y=y-x;
-                        }
+                    if(y==0){
+                        return x;
+                    }else{
+                        return this.nwd(y, x%y);
                     }
-                    return x;
                 }
 
                 sk(){
@@ -109,13 +106,57 @@
                 u1 = new U();
                 u2 = new U();
                 u3 = new U();
-
-                u1.l=1;
-                u1.m=3;
-                u2.l=1;
-                u2.m=6;
+                znak.innerHTML = "+";
+                u1.l=parseInt(l1g.value); // góra
+                u1.m=parseInt(l1d.value);
+                u2.l=parseInt(l2g.value);
+                u2.m=parseInt(l2d.value);
                 u3.d(u1,u2);
-                console.log(u3.l+"/"+u3.m)
+                lwg.value = u3.l;
+                lwd.value = u3.m;
+         
+            }
+            const ode =()=>{
+                znak.innerHTML = "-";
+                u1 = new U();
+                u2 = new U();
+                u3 = new U();
+                u1.l=parseInt(l1g.value); // góra
+                u1.m=parseInt(l1d.value);
+                u2.l=parseInt(l2g.value);
+                u2.m=parseInt(l2d.value);
+                u3.o(u1,u2);
+                lwg.value = u3.l;
+                lwd.value = u3.m;
+                
+            }
+            const mno =()=>{
+                u1 = new U();
+                u2 = new U();
+                u3 = new U();
+znak.innerHTML = "*";
+                u1.l=parseInt(l1g.value); // góra
+                u1.m=parseInt(l1d.value);
+                u2.l=parseInt(l2g.value);
+                u2.m=parseInt(l2d.value);
+                u3.mn(u1,u2);
+                lwg.value = u3.l;
+                lwd.value = u3.m;
+                
+            }
+            const dzi =()=>{
+                u1 = new U();
+                u2 = new U();
+                u3 = new U();
+ znak.innerHTML = "/";
+                u1.l=parseInt(l1g.value); // góra
+                u1.m=parseInt(l1d.value);
+                u2.l=parseInt(l2g.value);
+                u2.m=parseInt(l2d.value);
+                u3.dz(u1,u2);
+                lwg.value = u3.l;
+                lwd.value = u3.m;
+               
             }
         
         </script>
