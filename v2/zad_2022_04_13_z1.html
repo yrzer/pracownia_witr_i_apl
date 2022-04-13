@@ -37,14 +37,13 @@
                 </td>
             </tr>
         </table>
-        <input type="button" id="bp" value="+">
-        <input type="button" id="bn" value="-"> <input type="button" id="r_s" value="="><br>
-        <input type="button" id="bm" value="*">
-        <input type="button" id="bd" value="/"> <input type="button" id="AC" value="AC"><br>
+        <input type="button" onclick="dod()" value="+">
+        <input type="button" onclick="ode()" value="-"><br>
+        <input type="button" onclick="mno()" value="*">
+        <input type="button" onclick="dzi()" value="/">
     
     </center></body>
         <script type="text/javascript">
-            wybur = 0;
             class U{
                 #L;
                 #M;
@@ -102,23 +101,23 @@
                     this.sk();
                 }
             }
-            bp.addEventListener("click",function(){
+
+            const dod =()=>{
+                u1 = new U();
+                u2 = new U();
+                u3 = new U();
                 znak.innerHTML = "+";
-                wybur = 0;
-            })
-            bn.addEventListener("click",function(){
+                u1.l=parseInt(l1g.value); // góra
+                u1.m=parseInt(l1d.value);
+                u2.l=parseInt(l2g.value);
+                u2.m=parseInt(l2d.value);
+                u3.d(u1,u2);
+                lwg.value = u3.l;
+                lwd.value = u3.m;
+         
+            }
+            const ode =()=>{
                 znak.innerHTML = "-";
-                wybur = 1;
-            })
-            bm.addEventListener("click",function(){
-                znak.innerHTML = "*";
-                wybur = 2;
-            })
-            bd.addEventListener("click",function(){
-                znak.innerHTML = "/";
-                wybur = 3;
-            })
-            r_s.addEventListener("click",function(){
                 u1 = new U();
                 u2 = new U();
                 u3 = new U();
@@ -126,29 +125,39 @@
                 u1.m=parseInt(l1d.value);
                 u2.l=parseInt(l2g.value);
                 u2.m=parseInt(l2d.value);
-                if(wybur == 0) {
-                    u3.d(u1,u2);
-                }
-                else if(wybur == 1) {
-                    u3.o(u1,u2);
-                }
-                else if(wybur == 2) {
-                    u3.mn(u1,u2);
-                }
-                else if(wybur == 3) {
-                    u3.dz(u1,u2);
-                }
+                u3.o(u1,u2);
                 lwg.value = u3.l;
                 lwd.value = u3.m;
-            })
-            AC.addEventListener("click",function(){
-                l1g.value = "";
-                l1d.value = "";
-                l2g.value = "";
-                l2d.value = "";
-                l2g.value = "";
-                l2d.value = "";
-            })
-            
+                
+            }
+            const mno =()=>{
+                u1 = new U();
+                u2 = new U();
+                u3 = new U();
+znak.innerHTML = "*";
+                u1.l=parseInt(l1g.value); // góra
+                u1.m=parseInt(l1d.value);
+                u2.l=parseInt(l2g.value);
+                u2.m=parseInt(l2d.value);
+                u3.mn(u1,u2);
+                lwg.value = u3.l;
+                lwd.value = u3.m;
+                
+            }
+            const dzi =()=>{
+                u1 = new U();
+                u2 = new U();
+                u3 = new U();
+ znak.innerHTML = "/";
+                u1.l=parseInt(l1g.value); // góra
+                u1.m=parseInt(l1d.value);
+                u2.l=parseInt(l2g.value);
+                u2.m=parseInt(l2d.value);
+                u3.dz(u1,u2);
+                lwg.value = u3.l;
+                lwd.value = u3.m;
+               
+            }
+        
         </script>
     </html>
