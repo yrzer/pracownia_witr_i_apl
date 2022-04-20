@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>aaaaaaa</title><!-- juz nie wiem jak zapisywac pliki-->
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    
+    </head><body><center>
+        prostokąt<input type="radio" id="rb1" name="wybur" >
+        prostopdłościan<input type="radio" id="rb2" name="wybur" >
+        ostrosłup<input type="radio" id="rb3" name="wybur" ><br><br>
+        blok 1 <input type="number" id="b1"> pole <input type="number" id="po"><br>
+        blok 2 <input type="number" id="b2"> objętość <input type="number" id="ob"><br>
+        wysokość <input type="number" id="wy"><br><br>
+        <input type="button" onclick="zmien()" value="oblicz"><br>
+        <span id="w"></span>
+    </center></body>
+        <script type="text/javascript">
+            let wybur = 0;
+            rb1.addEventListener("Change", function(){
+                wybur = 1;
+                wy.disabled = true;
+            })
+            
+            class ps{ // prostopdłościan
+                #ba; // bok a
+                #bb; // bok b
+                get w(){// // wysokosc
+                return this.#w;
+                };
+                set w(value){// wysokosc
+                    this.#w=value;
+                };
+                pole(){
+                    return z*this.ba * this.bb +  z*this.ba * this.wys + z*this.bb * this.wys;
+                }
+                obj(){
+                    return this.ba * this.bb *this.wys;
+                }
+            }
+
+            class pp extends ps{ // prostopdłościan
+                #w; // wysokosc
+                get w(){// // wysokosc
+                return this.#w;
+                };
+                set w(value){// wysokosc
+                    this.#w=value;
+                };
+                pole(){
+                    return z*this.ba * this.bb +  z*this.ba * this.wys + z*this.bb * this.wys;
+                }
+                obj(){
+                    return this.ba * this.bb *this.wys;
+                }
+            }
+            
+            const zmien =()=>{
+                if(wybur == 1){
+                    let p = new prostokąt();
+                    p.ba = parsefloat(txtBokA.value);
+                    w.innerHtml=p.pole();
+                }
+                
+                
+               
+            }
+        
+        </script>
+    </html>
