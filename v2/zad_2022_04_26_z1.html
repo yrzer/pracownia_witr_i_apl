@@ -21,9 +21,9 @@
             </fieldset>
             <fieldset style="float:left;width:30%;">
                 <legend>dodatki</legend>
-                alarm <input type="text" id="alarm">
+                alarm <input type="text" id="alarm_txt">
                 <br>
-                klima <input type="text" id="klima">
+                klima <input type="text" id="klima_txt">
                 <br>
                 radio oddwarzacz <input type="text" id="radio_o">
             </fieldset>
@@ -80,18 +80,36 @@
             }
         }
 
-        class cos extends NW {
-            // cos
-
+        class NWzD extends NW { // z dodatkami
+            #kl; // klima
+            #al; // allarm 
+            #ro; // radio oddwrzacz
+            
+            constructor(cena,kurs,klima,alarm,radio){
+                super(cena,kurs);
+                this.#kl = klima;
+                this.#al = alarm;
+                this.#ro = radio;
+            }
+            oc(){
+                return super.oc()+this.#kl + this.#al + this.#ro;
+            }
         }
 
         const zmien = ()=>{
-            if(rb1.checked){
                 let model = model_a.value;
-                let cena = cena_e.value;
-                let kurs = kurs_e.value
+                let cena = parseFloat(cena_e.value);
+                let kurs = parseFloat(kurs_e.value);
+                let klima = parseFloat(klima_txt.value);
+                let alarm = parseFloat(alarm_txt.value);
+                let radio = parseFloat(radio_o.value);
+            if(rb1.checked){
                 let auto = new NW(cena, kurs);
-                w.innerHTML = model + " - cena auta :" + auto.oc(); 
+                w.innerHTML = model + " - cena auta: " + auto.oc(); 
+            }
+            if(rb2.checked){
+                let auto = new NWzD(cena, kurs, klima,alarm,radio);
+                w.innerHTML = model + " - cena auta z dodatkami: " + auto.oc(); 
             }
         }
 </script></html>
