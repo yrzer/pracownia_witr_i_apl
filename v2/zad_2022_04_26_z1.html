@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>aaaaaaa</title><!-- juz nie wiem jak zapisywac pliki-->
+        <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    </head>
+    <body><center>
+            <fieldset>
+                cena auta <input type="radio" id="rb1" name="wybur">
+                cena auta z dodatkami <input type="radio" id="rb2" name="wybur">
+                cena auta z dodatkami i ubezpieczeniem <input type="radio" id="rb3" name="wybur">
+            </fieldset>
+            <fieldset style="float:left;width:30%;">
+                <legend>nowe auto</legend>
+                model auta <input type="text" id="model_a">
+                <br>
+                cena (euro) <input type="text" id="cena_e">
+                <br>
+                kurs euro <input type="text" id="kurs_e">
+            </fieldset>
+            <fieldset style="float:left;width:30%;">
+                <legend>dodatki</legend>
+                alarm <input type="text" id="alarm">
+                <br>
+                klima <input type="text" id="klima">
+                <br>
+                radio oddwarzacz <input type="text" id="radio_o">
+            </fieldset>
+            <fieldset style="float:left;width:30%;">
+                <legend>ubezpieczenie</legend>
+                <input type="radio" id="if_p">
+                pierwsze auto<br>
+                ilość lat: <br>
+                <input type="text" id="i_lat">
+                <br>
+            </fieldset>
+            <br>
+            <div style="clear:both;">
+                <input type="button" onclick="zmien()" value="oblicz">
+                <br>
+                <span id="w">- wynik -</span>
+            </div>
+        </center></body>
+    <script type="text/javascript">
+
+        class NW {
+            // nowe auto
+            #ma;
+            // model auta
+            #ca;
+            // cena auta
+            #ke;
+            // kurs euro
+            get ma() {
+                return this.#ma;
+            }
+            ;set ma(value) {
+                this.#ma = value;
+            }
+            ;get ca() {
+                return this.#ca;
+            }
+            ;set ca(value) {
+                this.#ca = value;
+            }
+            ;get ke() {
+                return this.#ke;
+            }
+            ;set ke(value) {
+                this.#ke = value;
+            }
+            ;
+            constructor(cena, kurs) {
+                this.#ca = cena;
+                this.#ke = kurs;
+            }
+            oc() { // oce w aksa oce w aksa pan też cwiczy
+                return this.ca * this.ke;
+            }
+        }
+
+        class cos extends NW {
+            // cos
+
+        }
+
+        const zmien = ()=>{
+            if(rb1.checked){
+                let model = model_a.value;
+                let cena = cena_e.value;
+                let kurs = kurs_e.value
+                let auto = new NW(cena, kurs);
+                w.innerHTML = model + " - cena auta :" + auto.oc(); 
+            }
+        }
+</script></html>
