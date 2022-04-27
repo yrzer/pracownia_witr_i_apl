@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+	<title>aaaaaaa</title><!-- juz nie wiem jak zapisywac pliki-->
+    <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
+    </head><body><center>
+        <h4>oblicz</h4>
+        <input type="radio" id="k" name="rb" > koło
+        <input type="radio" id="w" name="rb" > walec
+        <input type="radio" id="s" name="rb" > stożek<br> <br>
+        promień <input type="number" id="pro_i" value="2">
+        pole <input type="number" id="po_i" value="0"><br>
+        wysokość <input type="number" id="wys_i" value="2">
+        objętość <input type="number" id="obj_i" value="0"><br>
+        <input type="button" onclick="zmien()" value="oblicz">
+    </center>
+    </body>
+        <script type="text/javascript">
+        class kolo{
+            #p;
+
+            get p(){
+                return this.#p;
+            };
+            set p(value){
+                this.#p=value;
+            };
+           
+            constructor(pro) {
+                this.#p = pro;
+            }
+
+            o_p(){ // oblicz pole
+                return Math.PI*(this.p*this.p) ;
+            }
+            
+        }
+
+        class walec extends kolo{
+            #w;
+
+            get w(){
+                return this.#w;
+            };
+            set w(value){
+                this.#w=value;
+            };
+           
+            constructor(pro,wys) {
+                super(pro);
+                this.#w = wys;
+            }
+
+            o_p(){ // oblicz pole
+                return 2*Math.PI*this.p*(this.p+this.w) ;
+            }
+            o_v(){ // oblicz objętość
+                return Math.PI*(this.p*this.p)*this.w ;
+            }
+            
+        }
+
+        class stozek extends walec{
+            o_p(){ // oblicz pole
+                return Math.PI*this.p*(this.p+Math.sqrt((this.p*this.p)+(this.w*this.w))) ;
+            }
+            o_v(){ // oblicz objętość
+                return super.o_v()/3 ;
+            }
+            
+        }
+
+        const zmien =()=>{
+            let pro = parseFloat(pro_i.value),wys = parseFloat(wys_i.value);
+
+            if(k.checked){// koło
+                let k = new kolo(pro);
+                
+                po_i.value = k.o_p();
+            }
+            if(w.checked){// walec
+                let k = new walec(pro,wys);
+                po_i.value = k.o_p();
+                obj_i.value = k.o_v();
+            }
+            if(s.checked){// stożek
+                let k = new stozek(pro,wys);
+                po_i.value = k.o_p();
+                obj_i.value = k.o_v();
+            }
+        }
+        </script>
+    </html>
