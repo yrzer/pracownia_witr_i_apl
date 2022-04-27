@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="pl"><head>
     <meta charset="UTF-8">
-	<title>aaaaaaa</title><!-- juz nie wiem jak zapisywac pliki-->
+	<title>kartkówka</title>
     <link rel="stylesheet" href="https://yrzer.github.io/pracownia_witr_i_apl/dark_mode.css">
     </head><body><center>
         <h4>oblicz</h4>
@@ -16,17 +16,17 @@
     </body>
         <script type="text/javascript">
         class kolo{
-            #p;
+            #p; // pole prywatne promienia
 
             get p(){
-                return this.#p;
+                return this.#p; // pobranie wartości
             };
             set p(value){
-                this.#p=value;
+                this.#p=value; // zapisanie wartości
             };
            
             constructor(pro) {
-                this.#p = pro;
+                this.#p = pro; // podczas twożenia zapisywanie wartośći
             }
 
             o_p(){ // oblicz pole
@@ -35,18 +35,18 @@
             
         }
 
-        class walec extends kolo{
-            #w;
+        class walec extends kolo{ // classa rosrzeżona z kola
+            #w; // pole prywatne wysokości
 
             get w(){
-                return this.#w;
+                return this.#w; // pobranie wartości
             };
             set w(value){
-                this.#w=value;
+                this.#w=value; // zapisanie wartości
             };
            
-            constructor(pro,wys) {
-                super(pro);
+            constructor(pro,wys) { // podczas twożenia zapisywanie wartośći
+                super(pro); // constructor z dziedziczenia
                 this.#w = wys;
             }
 
@@ -59,33 +59,33 @@
             
         }
 
-        class stozek extends walec{
+        class stozek extends walec{ // classa rosrzeżona z walca
             o_p(){ // oblicz pole
                 return Math.PI*this.p*(this.p+Math.sqrt((this.p*this.p)+(this.w*this.w))) ;
             }
             o_v(){ // oblicz objętość
-                return super.o_v()/3 ;
+                return super.o_v()/3 ; // rosrzeżona objętość z walca o podzielenie przez 3
             }
             
         }
 
         const zmien =()=>{
-            let pro = parseFloat(pro_i.value),wys = parseFloat(wys_i.value);
+            let pro = parseFloat(pro_i.value),wys = parseFloat(wys_i.value); // pobranie z input wartości
 
             if(k.checked){// koło
-                let k = new kolo(pro);
+                let k = new kolo(pro); // zapisywanie kalsy do zmienej k
                 
-                po_i.value = k.o_p();
+                po_i.value = k.o_p(); // onliczenie i wpisanie do inputa
             }
             if(w.checked){// walec
-                let k = new walec(pro,wys);
-                po_i.value = k.o_p();
-                obj_i.value = k.o_v();
+                let k = new walec(pro,wys); // zapisywanie kalsy do zmienej k
+                po_i.value = k.o_p(); // onliczenie i wpisanie do inputa
+                obj_i.value = k.o_v(); // onliczenie i wpisanie do inputa
             }
             if(s.checked){// stożek
-                let k = new stozek(pro,wys);
-                po_i.value = k.o_p();
-                obj_i.value = k.o_v();
+                let k = new stozek(pro,wys); // zapisywanie kalsy do zmienej k
+                po_i.value = k.o_p(); // onliczenie i wpisanie do inputa
+                obj_i.value = k.o_v(); // onliczenie i wpisanie do inputa
             }
         }
         </script>
